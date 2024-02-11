@@ -17,4 +17,13 @@ library(gitcreds)
 
 #gitcreds_set() and then put token in. 2 -> put token in.
 
-#use_github()
+#use_github() to push the inital repository. 
+
+
+
+#To test if commit works by doing git add ., git commit -m 'test commit', git push
+print("hi")
+
+
+
+
