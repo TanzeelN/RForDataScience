@@ -96,3 +96,18 @@ ggplot(data = mpg)+
 
 ggplot(data = mpg)+
     geom_point(mapping = aes(x = displ, y = hwy, color = displ < 5))
+
+
+## Facet Mapping -----------------------------
+
+glimpse(mpg)
+
+
+ggplot(data = mpg)+
+    geom_point(mapping = aes(x = year, y = hwy))+
+    facet_wrap(cyl ~ drv,nrow = 6)
+
+
+ggplot(data = mpg)+
+    geom_point(mapping = aes(x = year, y = hwy))+
+    facet_grid(cyl ~ drv)
