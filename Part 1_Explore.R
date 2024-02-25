@@ -111,3 +111,38 @@ ggplot(data = mpg)+
 ggplot(data = mpg)+
     geom_point(mapping = aes(x = year, y = hwy))+
     facet_grid(cyl ~ drv)
+
+## Facet Exercsise----------------------------
+
+#Question 1
+
+# Continous variables for facet mapping wouldn't work because it would cause too many graphs based on the number of possibilities of that variable.
+
+#Question 2
+#Those combinations don't exist so then they would be empty.
+ggplot(data = mpg)+
+    geom_point(mapping = aes(x = drv, y = cyl))+
+    facet_grid(drv~cyl)
+
+
+#Question 3
+
+# . ignores that dimension
+ggplot(data = mpg)+
+    geom_point(mapping = aes(x = displ, y = hwy))+
+    facet_grid(drv ~ .)
+
+
+
+ggplot(data = mpg)+
+    geom_point(mapping = aes(x = displ, y = hwy))+
+    facet_grid(. ~ cyl)
+    
+#Question 4 
+
+ggplot(data= mpg)+
+    geom_point(mapping = aes(x=displ, y= hwy))+
+    facet_wrap( ~class, nrow = 2)
+#its easier to see the differences visually. Larger that dataset, it would stick in the mind less.
+
+?facet_wrap
